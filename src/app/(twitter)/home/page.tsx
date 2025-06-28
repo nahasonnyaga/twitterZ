@@ -1,6 +1,8 @@
 "use client";
 
 import { useContext } from "react";
+import DebugSession from "@/components/debug-session";
+
 import { useQuery } from "@tanstack/react-query";
 
 import Tweets from "@/components/tweet/Tweets";
@@ -15,7 +17,7 @@ export default function HomePage() {
 
     const { isLoading, data } = useQuery({
         queryKey: ["tweets", "home"],
-        queryFn: () => getRelatedTweets(),
+        queryFn: getRelatedTweets,
     });
 
     if (isPending || isLoading) return <CircularLoading />;
@@ -25,7 +27,17 @@ export default function HomePage() {
             <h1 className="page-name">Home</h1>
             {token && <NewTweet token={token} />}
             {data && data.tweets.length === 0 && <NothingToShow />}
-            <Tweets tweets={data.tweets} />
+            {data && data.tweets.length > 0 && <Tweets tweets={data.tweets} />}
         </main>
     );
 }
+return (
+  <>
+    <DebugSession /> {/* Shows session in browser console */}
+    <main>
+      <h1 className="page-name">Home</h1>
+      {/* the rest of your existing code */}
+    </main>
+  </>
+);
+

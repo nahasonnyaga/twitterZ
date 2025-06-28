@@ -1,32 +1,32 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-
-import NotFound from "@/app/not-found";
-import Profile from "@/components/user/Profile";
 import CircularLoading from "@/components/misc/CircularLoading";
-import { getUser } from "@/utilities/fetch";
+import NotFound from "@/components/misc/NotFound";
+import { fetchUserProfile } from "@/utilities/fetch";
 
-export default function ProfileLayout({
-    children,
-    params: { username },
-}: {
-    children: React.ReactNode;
-    params: { username: string };
-}) {
-    const { isLoading, isFetched, data } = useQuery({
-        queryKey: ["users", username],
-        queryFn: () => getUser(username),
-    });
+export default function ProfileLayout({ children, params }) {
+  const { username } = params;
 
-    if (isLoading) return <CircularLoading />;
+  const { data, isLoading, isError, isFetched } = useQuery({
+    queryKey: ["profile", username],
+    queryFn: () => fetchUserProfile(username),
+  });
 
-    if (isFetched && !data.user) return NotFound();
+  if (isLoading) return <CircularLoading />;
 
-    return (
-        <div className="profile-layout">
-            {isFetched && <Profile profile={data.user} />}
-            {children}
-        </div>
-    );
+  if (isError) return <NotFound />;
+
+  // 🔥 FIX: check if data is undefined or user is missing
+  if (isFetched && (!data || !data.user)) return <NotFound />;
+
+  return (
+    <div className="profile-layout">
+      {/* You can use data.user safely below */}
+      <header>
+        <h1>@{data.user.username}</h1>
+      </header>
+      {children}
+    </div>
+  );
 }

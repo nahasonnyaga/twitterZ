@@ -1,0 +1,263 @@
+.
+├── .env.example
+├── .eslintrc.json
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── next-env.d.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── project-tree.txt
+├── public
+│   ├── assets
+│   │   ├── egg.jpg
+│   │   ├── favicon-white.png
+│   │   ├── favicon.png
+│   │   ├── header.jpg
+│   │   └── root.png
+│   └── screenshots
+│       ├── ss1.png
+│       ├── ss2.png
+│       ├── ss3.png
+│       ├── ss4.png
+│       ├── ss5.png
+│       └── ss6.png
+├── src
+│   ├── app
+│   │   ├── (twitter)
+│   │   │   ├── [username]
+│   │   │   │   ├── (withProfileLayout)
+│   │   │   │   │   ├── layout.tsx
+│   │   │   │   │   ├── likes
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── media
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── replies
+│   │   │   │   │       └── page.tsx
+│   │   │   │   ├── edit
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── tweets
+│   │   │   │       └── [tweetId]
+│   │   │   │           └── page.tsx
+│   │   │   ├── explore
+│   │   │   │   └── page.tsx
+│   │   │   ├── home
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   ├── messages
+│   │   │   │   └── page.tsx
+│   │   │   ├── notifications
+│   │   │   │   └── page.tsx
+│   │   │   ├── search
+│   │   │   │   └── page.tsx
+│   │   │   └── settings
+│   │   │       └── page.tsx
+│   │   ├── api
+│   │   │   ├── auth
+│   │   │   │   ├── login
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── logout
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── verify
+│   │   │   │       └── route.ts
+│   │   │   ├── messages
+│   │   │   │   ├── [username]
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── create
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── delete
+│   │   │   │       └── route.ts
+│   │   │   ├── notifications
+│   │   │   │   ├── create
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── read
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── route.ts
+│   │   │   ├── search
+│   │   │   │   └── route.ts
+│   │   │   ├── tweets
+│   │   │   │   ├── [username]
+│   │   │   │   │   ├── [tweetId]
+│   │   │   │   │   │   ├── delete
+│   │   │   │   │   │   │   └── route.ts
+│   │   │   │   │   │   ├── like
+│   │   │   │   │   │   │   └── route.ts
+│   │   │   │   │   │   ├── reply
+│   │   │   │   │   │   │   └── route.ts
+│   │   │   │   │   │   ├── retweet
+│   │   │   │   │   │   │   └── route.ts
+│   │   │   │   │   │   ├── route.ts
+│   │   │   │   │   │   ├── unlike
+│   │   │   │   │   │   │   └── route.ts
+│   │   │   │   │   │   └── unretweet
+│   │   │   │   │   │       └── route.ts
+│   │   │   │   │   ├── likes
+│   │   │   │   │   │   └── route.ts
+│   │   │   │   │   ├── media
+│   │   │   │   │   │   └── route.ts
+│   │   │   │   │   ├── replies
+│   │   │   │   │   │   └── route.ts
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── all
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── create
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── related
+│   │   │   │       └── route.ts
+│   │   │   └── users
+│   │   │       ├── [username]
+│   │   │       │   ├── edit
+│   │   │       │   │   └── route.ts
+│   │   │       │   ├── follow
+│   │   │       │   │   └── route.ts
+│   │   │       │   ├── route.ts
+│   │   │       │   └── unfollow
+│   │   │       │       └── route.ts
+│   │   │       ├── create
+│   │   │       │   └── route.ts
+│   │   │       ├── exists
+│   │   │       │   └── route.ts
+│   │   │       └── random
+│   │   │           └── route.ts
+│   │   ├── global-error.tsx
+│   │   ├── icon.png
+│   │   ├── layout.tsx
+│   │   ├── loading.tsx
+│   │   ├── not-authorized
+│   │   │   └── page.tsx
+│   │   ├── not-found.tsx
+│   │   ├── page.tsx
+│   │   └── providers.tsx
+│   ├── components
+│   │   ├── dialog
+│   │   │   ├── LogInDialog.tsx
+│   │   │   ├── LogOutDialog.tsx
+│   │   │   ├── NewMessageDialog.tsx
+│   │   │   ├── NewTweetDialog.tsx
+│   │   │   ├── PreviewDialog.tsx
+│   │   │   └── SignUpDialog.tsx
+│   │   ├── layout
+│   │   │   ├── Footer.tsx
+│   │   │   ├── LeftSidebar.tsx
+│   │   │   └── RightSidebar.tsx
+│   │   ├── message
+│   │   │   ├── Conversation.tsx
+│   │   │   ├── Message.tsx
+│   │   │   ├── Messages.tsx
+│   │   │   └── NewMessageBox.tsx
+│   │   ├── misc
+│   │   │   ├── BackToArrow.tsx
+│   │   │   ├── CircularLoading.tsx
+│   │   │   ├── CompleteProfileReminder.tsx
+│   │   │   ├── CustomSnackbar.tsx
+│   │   │   ├── GlobalLoading.tsx
+│   │   │   ├── Legal.tsx
+│   │   │   ├── NothingToShow.tsx
+│   │   │   ├── Notification.tsx
+│   │   │   ├── ProgressCircle.tsx
+│   │   │   ├── RetweetIcon.tsx
+│   │   │   ├── Search.tsx
+│   │   │   ├── UnreadNotificationsBadge.tsx
+│   │   │   ├── Uploader.tsx
+│   │   │   └── WhoToFollow.tsx
+│   │   ├── tweet
+│   │   │   ├── Counters.tsx
+│   │   │   ├── Like.tsx
+│   │   │   ├── NewReply.tsx
+│   │   │   ├── NewTweet.tsx
+│   │   │   ├── Replies.tsx
+│   │   │   ├── Reply.tsx
+│   │   │   ├── Retweet.tsx
+│   │   │   ├── Share.tsx
+│   │   │   ├── SingleTweet.tsx
+│   │   │   ├── Tweet.tsx
+│   │   │   ├── TweetArrayLength.tsx
+│   │   │   └── Tweets.tsx
+│   │   └── user
+│   │       ├── EditProfile.tsx
+│   │       ├── Follow.tsx
+│   │       ├── Profile.tsx
+│   │       ├── ProfileCard.tsx
+│   │       └── User.tsx
+│   ├── fonts
+│   │   ├── Poppins-Bold.ttf
+│   │   ├── Poppins-ExtraBold.ttf
+│   │   ├── Poppins-ExtraLight.ttf
+│   │   ├── Poppins-Light.ttf
+│   │   ├── Poppins-Medium.ttf
+│   │   ├── Poppins-Regular.ttf
+│   │   ├── Poppins-SemiBold.ttf
+│   │   ├── Poppins-Thin.ttf
+│   │   └── Roboto.ttf
+│   ├── hooks
+│   │   └── useAuth
+│   │       └── index.tsx
+│   ├── middleware.ts
+│   ├── prisma
+│   │   ├── client.ts
+│   │   ├── migrations
+│   │   │   ├── 20230415232240_init
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230427185458_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230428110554_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230430162624_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230502140912_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230502161449_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230503164723_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230504164320_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230506185544_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230507151031_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230508165206_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230511000542_
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20230511161421_
+│   │   │   │   └── migration.sql
+│   │   │   └── migration_lock.toml
+│   │   └── schema.prisma
+│   ├── styles
+│   │   ├── globals.scss
+│   │   └── reset.scss
+│   ├── types
+│   │   ├── DialogProps.ts
+│   │   ├── MessageProps.ts
+│   │   ├── NotificationProps.ts
+│   │   ├── SnackbarProps.ts
+│   │   ├── TokenProps.ts
+│   │   ├── TweetProps.ts
+│   │   └── UserProps.ts
+│   ├── utilities
+│   │   ├── auth
+│   │   │   └── index.ts
+│   │   ├── bcrypt
+│   │   │   └── index.ts
+│   │   ├── date
+│   │   │   └── index.ts
+│   │   ├── fetch
+│   │   │   └── index.ts
+│   │   ├── misc
+│   │   │   ├── checkBlue.ts
+│   │   │   ├── getFullURL.ts
+│   │   │   ├── scrollToBottom.ts
+│   │   │   ├── shimmer.ts
+│   │   │   ├── shouldCreateNotification.ts
+│   │   │   └── sleep.ts
+│   │   └── storage
+│   │       └── index.ts
+│   └── utils
+│       └── supabase-client.ts
+└── tsconfig.json
+
+93 directories, 168 files

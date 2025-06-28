@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");  // ⬅️ swapped bcrypt ➔ bcryptjs ✅
 
 export const hashPassword = async (unHashedPassword: string): Promise<string> => {
     const saltRounds = 10;
